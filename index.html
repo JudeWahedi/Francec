@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, MOM </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            margin: 4px;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        #happyBirthday {
+            font-size: 50px;
+            font-weight: bold;
+            margin-top: 100px;
+            animation: explode 2s infinite;
+        }
+
+        @keyframes explode {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); color: pink; }
+            100% { transform: scale(1); color: yellow; }
+        }
+
+        .balloons {
+            position: relative;
+            height: 200px;
+        }
+
+        .balloon {
+            position: absolute;
+            bottom: 0;
+            width: 50px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: #ff6f61;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .balloon:before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            width: 2px;
+            height: 20px;
+            background-color: #fff;
+            transform: translateX(-50%);
+        }
+
+        .one { left: 10%; animation-duration: 5s; }
+        .two { left: 30%; background-color: #ffb347; animation-duration: 7s; }
+        .three { left: 50%; background-color: #fbd46d; animation-duration: 6.5s; }
+        .four { left: 70%; background-color: #6be7c1; animation-duration: 8s; }
+        .five { left: 90%; background-color: #6a67ce; animation-duration: 5.5s; }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+            100% { transform: translateY(0); }
+        }
+
+        .message p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+
+        #surpriseBtn {
+            background-color: #f76c6c;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #surpriseBtn:hover {
+            background-color: #f55a5a;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #surprise img {
+            margin-top: 20px;
+            width: 200px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="happyBirthday">Happy <br> Birthday <br> 🎉MOM💐</div>
+
+        <div class="balloons">
+            <div class="balloon one"></div>
+            <div class="balloon two"></div>
+            <div class="balloon three"></div>
+            <div class="balloon four"></div>
+            <div class="balloon five"></div>
+        </div>
+
+        <div class="message">
+            <p>MOM, today is a special day because you're in this world! 🎉</p>
+            <p>Wishing you all the happiness, love, and success. You deserve nothing less.</p>
+            <a href="0.html"><button id="surpriseBtn">Click for a Surprise!</button></a>
+        </div>
+
+        <div id="surprise" class="surprise hidden">
+            <p>Here’s a little secret: <strong><a href="3.html">You make the world brighter! tap me</a></strong></p>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add particles for more effects
+        function createParticle() {
+            const particle = document.createElement("div");
+            particle.className = "particle";
+            document.body.appendChild(particle);
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.animationDuration = `${Math.random() * 2 + 2}s`;
+            setTimeout(() => {
+                particle.remove();
+            }, 5000);
+        }
+        setInterval(createParticle, 100);
+    </script>
+</body>
+ </html
